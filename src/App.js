@@ -1,5 +1,5 @@
 //createElement gives react element that is nothing but a js object not an html element
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Header from "./components/Header";
@@ -8,6 +8,8 @@ import About from "./components/About";
 import ContactUs from "./components/ContactUs";
 import Error from "./components/Error";
 import RestuarantMenu from "./components/RestuarantMenu";
+
+const Grocery = lazy(() => import("./components/Grocery.js"));
 const AppLayout = () => {
   return (
     <div className="app">
@@ -37,6 +39,14 @@ const appRouter = createBrowserRouter([
       {
         path: "restuarants/:resId",
         element: <RestuarantMenu />,
+      },
+      {
+        path: "/Grocery",
+        element: (
+          <Suspense fallback={<h1>Loading Grocery...</h1>}>
+            <Grocery />
+          </Suspense>
+        ),
       },
     ],
     errorElement: <Error />,

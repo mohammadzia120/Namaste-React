@@ -1,7 +1,7 @@
 const { useEffect } = require("react");
 
 const ContactUs = () => {
-  useEffect(async () => {
+  useEffect(() => {
     const timer = setInterval(() => {
       console.log("useEffect running");
     }, 1000);
