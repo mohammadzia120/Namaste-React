@@ -6,38 +6,30 @@ const Header = () => {
   const [btnNameReact, setBtnNameReact] = useState("Login");
   const onlineStatus = useOnlineStatus();
   return (
-    <div className="header">
-      <div className="logo-container">
-        <img className="logo" src={LOGO_URL}></img>
+    <div className="flex justify-between">
+      <div className="">
+        <img className=" w-48" src={LOGO_URL}></img>
       </div>
-      <div className="nav-items">
-        <ul>
-          <li>Online Status: {onlineStatus ? "🟢" : "🔴"}</li>
-          <li>
-            <Link to="/" style={{ textDecoration: "none" }}>
-              Home
-            </Link>
+      <div className="flex items-center">
+        <ul className="flex p-4 m-4">
+          <li className="px-4">Online Status: {onlineStatus ? "🟢" : "🔴"}</li>
+          <li className="px-4">
+            <Link to="/">Home</Link>
           </li>
-          <li>
-            <Link to="/About" style={{ textDecoration: "none" }}>
-              About
-            </Link>
+          <li className="px-4">
+            <Link to="/About">About</Link>
           </li>
-          <li>
-            <Link to="/ContactUs" style={{ textDecoration: "none" }}>
-              Contact Us
-            </Link>
+          <li className="px-4">
+            <Link to="/ContactUs">Contact Us</Link>
           </li>
-          <li>
-            <Link style={{ textDecoration: "none" }}>Cart</Link>
+          <li className="px-4">
+            <Link>Cart</Link>
           </li>
-          <li>
-            <Link to="/Grocery" style={{ textDecoration: "none" }}>
-              Grocery
-            </Link>
+          <li className="px-4">
+            <Link to="/Grocery">Grocery</Link>
           </li>
           <button
-            className="login"
+            className="px-4"
             onClick={() => {
               btnNameReact === "Login"
                 ? setBtnNameReact("Logout")
