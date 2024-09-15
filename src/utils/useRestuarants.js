@@ -13,7 +13,7 @@ const useRestuarants = () => {
     const jsonData = await data.json();
     console.log("jsonData ", jsonData);
     setRestuarants(
-      jsonData?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+      jsonData?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
     );
   };

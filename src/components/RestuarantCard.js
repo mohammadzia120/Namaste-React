@@ -17,4 +17,17 @@ const RestuarantCard = (props) => {
     </div>
   );
 };
-module.exports = RestuarantCard;
+
+export const withPromotedLabel = (RestuarantCard) => {
+  return (props) => {
+    return (
+      <div>
+        <label className=" absolute bg-black text-white rounded-sm">
+          Promoted
+        </label>
+        <RestuarantCard {...props} />
+      </div>
+    );
+  };
+};
+export default RestuarantCard;
